@@ -5,6 +5,7 @@ import 'package:doctorhunt/feature/onboarding/widgets/role_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 class ChooseRoleScreen extends StatefulWidget {
   const ChooseRoleScreen({super.key});
@@ -66,7 +67,7 @@ class _ChooseRoleScreenState extends State<ChooseRoleScreen> {
                 title: 'Admin',
                 description:
                     'Manage doctors, appointments,\nusers, and the platform.',
-                imagePath: 'assets/images/admin_icon.png' ,
+                imagePath: 'assets/images/admin_icon.png',
                 selected: selectedRole == 'Admin',
                 onTap: () {
                   setState(() {
@@ -77,7 +78,12 @@ class _ChooseRoleScreenState extends State<ChooseRoleScreen> {
 
               const Spacer(),
 
-              CustomButton(text: 'Continue'),
+              CustomButton(
+                text: 'Continue',
+                onTap: () {
+                  context.go('/mainLayout');
+                },
+              ),
 
               SizedBox(height: 25.h),
             ],
@@ -87,5 +93,3 @@ class _ChooseRoleScreenState extends State<ChooseRoleScreen> {
     );
   }
 }
-
-

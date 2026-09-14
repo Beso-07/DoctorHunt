@@ -83,6 +83,7 @@ const yellowDegree = Color(0xffFEF8ED);
 /// ===============================
 
 const primary = Color(0xff0EBE7F);
+const greyIconColor = Color(0xff677294);
 
 const secondary = Color(0xFFFF6B35);
 const accent = Color(0xFFFFC857);
