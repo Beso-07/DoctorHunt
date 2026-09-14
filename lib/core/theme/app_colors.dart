@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 const scaffoldBack = Color(0xff333739);
 const brush = Color(0xff274268);
 const description = Color(0xffA0ABBD);
-const primaryColor = Color(0xff6C4CFF);
+const primaryColor = Color(0xff0EBE7F);
 const textColor = Color(0xFF101623);
 const cardTabColor = Color(0xffeff3ff);
 const greyTextColor = Color(0xff717182);
@@ -82,9 +82,7 @@ const yellowDegree = Color(0xffFEF8ED);
 /// Brand Colors
 /// ===============================
 
-const primary = Color(0xFF6C4CFF);
-const primaryHover = Color(0xFF7D63FF);
-const primaryPressed = Color(0xFF5638E8);
+const primary = Color(0xff0EBE7F);
 
 const secondary = Color(0xFFFF6B35);
 const accent = Color(0xFFFFC857);

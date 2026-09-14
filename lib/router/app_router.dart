@@ -1,13 +1,18 @@
 
+import 'package:doctorhunt/feature/onboarding/pages/choose_role_screen.dart';
+import 'package:doctorhunt/feature/onboarding/pages/onboarding_screen.dart';
+import 'package:doctorhunt/feature/splash/splash_screen.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: '/',
 
   routes: [
     //================= Splash =================
-    //GoRoute(path: '/', builder: (context, state) => const SplashScreen()),
+    GoRoute(path: '/', builder: (context, state) => const SplashScreen()),
+    //================= Onboarding =================
+    GoRoute(path: '/onboarding', builder: (context, state) => const OnboardingScreen()),
+    GoRoute(path: '/choose-role', builder: (context, state) => const ChooseRoleScreen()),
     //================= AUTH SHELL =================
     // ShellRoute(
     //   builder: (context, state, child) =>
