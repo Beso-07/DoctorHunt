@@ -1,4 +1,6 @@
 import 'package:doctorhunt/feature/bottom_bar/presentation/pages/main_layout_screen.dart';
+import 'package:doctorhunt/feature/doctor_details/presentation/pages/doctor_details_screen.dart';
+import 'package:doctorhunt/feature/doctor_details/presentation/pages/select_time_screen.dart';
 import 'package:doctorhunt/feature/home/presentation/pages/home_screen.dart';
 import 'package:doctorhunt/feature/onboarding/pages/choose_role_screen.dart';
 import 'package:doctorhunt/feature/onboarding/pages/onboarding_screen.dart';
@@ -52,5 +54,7 @@ final GoRouter appRouter = GoRouter(
 
     // ================= Home ================= //
     GoRoute(path: '/home', builder: (context, state) => const HomeScreen()),
+    GoRoute(path: '/doctor-details', builder: (context, state) => const DoctorDetailsScreen()),
+    GoRoute(path: '/select-time', builder: (context, state) => const SelectTimeScreen()),
   ],
 );

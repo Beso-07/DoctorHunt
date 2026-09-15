@@ -16,7 +16,8 @@ class CustomButton extends StatelessWidget {
     this.height,
     this.fontWeight,
     this.decoration,
-    this.fontSize
+    this.fontSize,
+    this.radius,
   });
   final String text;
   final Color? fontColor;
@@ -28,6 +29,7 @@ class CustomButton extends StatelessWidget {
   final FontWeight? fontWeight;
   final TextDecoration? decoration;
   final double? fontSize;
+  final double? radius;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,7 @@ class CustomButton extends StatelessWidget {
         height: height?? 50.h,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.r),
+          borderRadius: BorderRadius.circular(radius ?? 10.r),
           color: backgroundColor ?? primaryColor,
         ),
         child: isLoading
