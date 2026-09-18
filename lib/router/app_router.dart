@@ -1,10 +1,10 @@
-import 'package:doctorhunt/feature/bottom_bar/presentation/pages/main_layout_screen.dart';
-import 'package:doctorhunt/feature/doctor_details/presentation/pages/doctor_details_screen.dart';
-import 'package:doctorhunt/feature/doctor_details/presentation/pages/select_time_screen.dart';
-import 'package:doctorhunt/feature/home/presentation/pages/home_screen.dart';
-import 'package:doctorhunt/feature/onboarding/pages/choose_role_screen.dart';
-import 'package:doctorhunt/feature/onboarding/pages/onboarding_screen.dart';
-import 'package:doctorhunt/feature/splash/splash_screen.dart';
+import 'package:doctorhunt/feature/common/bottom_bar/presentation/pages/patient_bottom_bar.dart';
+import 'package:doctorhunt/feature/patient/doctor_details/presentation/pages/doctor_details_screen.dart';
+import 'package:doctorhunt/feature/patient/doctor_details/presentation/pages/select_time_screen.dart';
+import 'package:doctorhunt/feature/patient/home/presentation/pages/patient_home_screen.dart';
+import 'package:doctorhunt/feature/common/onboarding/pages/choose_role_screen.dart';
+import 'package:doctorhunt/feature/common/onboarding/pages/onboarding_screen.dart';
+import 'package:doctorhunt/feature/common/splash/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter appRouter = GoRouter(
@@ -50,10 +50,10 @@ final GoRouter appRouter = GoRouter(
     // ),
 
     // ================= Main Layout =================
-    GoRoute(path: '/mainLayout', builder: (context, state) => MainLayout()),
+    GoRoute(path: '/patient_bottom_bar', builder: (context, state) => PatientBottomBar()),
 
     // ================= Home ================= //
-    GoRoute(path: '/home', builder: (context, state) => const HomeScreen()),
+    GoRoute(path: '/patient_home_screen', builder: (context, state) => const PatientHomeScreen()),
     GoRoute(path: '/doctor-details', builder: (context, state) => const DoctorDetailsScreen()),
     GoRoute(path: '/select-time', builder: (context, state) => const SelectTimeScreen()),
   ],

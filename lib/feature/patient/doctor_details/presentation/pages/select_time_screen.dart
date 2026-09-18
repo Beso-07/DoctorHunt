@@ -1,8 +1,8 @@
 import 'package:doctorhunt/core/theme/app_colors.dart';
 import 'package:doctorhunt/core/theme/custom_text.dart';
-import 'package:doctorhunt/feature/doctor_details/presentation/widgets/doctor_info_card.dart';
-import 'package:doctorhunt/feature/doctor_details/presentation/widgets/select_date_list.dart';
-import 'package:doctorhunt/feature/doctor_details/presentation/widgets/time_slots.dart';
+import 'package:doctorhunt/feature/patient/doctor_details/presentation/widgets/doctor_info_card.dart';
+import 'package:doctorhunt/feature/patient/doctor_details/presentation/widgets/select_date_list.dart';
+import 'package:doctorhunt/feature/patient/doctor_details/presentation/widgets/time_slots.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';

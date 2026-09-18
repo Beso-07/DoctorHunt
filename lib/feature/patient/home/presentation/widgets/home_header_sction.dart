@@ -1,6 +1,6 @@
 import 'package:doctorhunt/core/theme/app_colors.dart';
 import 'package:doctorhunt/core/theme/custom_text.dart';
-import 'package:doctorhunt/core/widgets/defaultTextField.dart';
+import 'package:doctorhunt/core/widgets/default_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

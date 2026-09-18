@@ -1,17 +1,17 @@
-import 'package:doctorhunt/feature/bottom_bar/presentation/widgets/custom_bottom_navigation_bar.dart';
-import 'package:doctorhunt/feature/home/presentation/pages/home_screen.dart';
+import 'package:doctorhunt/feature/common/bottom_bar/presentation/widgets/custom_bottom_navigation_bar.dart';
+import 'package:doctorhunt/feature/patient/home/presentation/pages/patient_home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 
-class MainLayout extends StatefulWidget {
-  const MainLayout({super.key});
+class PatientBottomBar extends StatefulWidget {
+  const PatientBottomBar({super.key});
 
   @override
-  State<MainLayout> createState() => _MainLayoutState();
+  State<PatientBottomBar> createState() => _PatientBottomBarState();
 }
 
-class _MainLayoutState extends State<MainLayout> {
+class _PatientBottomBarState extends State<PatientBottomBar> {
   int _currentIndex = 0;
 
   late final List<Widget> _screens;
@@ -20,7 +20,7 @@ class _MainLayoutState extends State<MainLayout> {
   void initState() {
     super.initState();
     _screens = [
-      const HomeScreen(),
+      const PatientHomeScreen(),
       Center(
         child: Text(
           'Favorite Doctors',

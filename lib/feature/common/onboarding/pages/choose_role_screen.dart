@@ -1,7 +1,7 @@
 import 'package:doctorhunt/core/theme/app_colors.dart';
 import 'package:doctorhunt/core/theme/custom_text.dart';
 import 'package:doctorhunt/core/widgets/custom_button.dart';
-import 'package:doctorhunt/feature/onboarding/widgets/role_card.dart';
+import 'package:doctorhunt/feature/common/onboarding/widgets/role_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -81,7 +81,7 @@ class _ChooseRoleScreenState extends State<ChooseRoleScreen> {
               CustomButton(
                 text: 'Continue',
                 onTap: () {
-                  context.go('/mainLayout');
+                  context.go('/patient_bottom_bar');
                 },
               ),
 

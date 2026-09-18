@@ -1,16 +1,16 @@
 import 'package:doctorhunt/core/theme/app_colors.dart';
 import 'package:doctorhunt/core/theme/custom_text.dart';
-import 'package:doctorhunt/feature/home/presentation/widgets/categories_list.dart';
-import 'package:doctorhunt/feature/home/presentation/widgets/feature_doctor_list.dart';
-import 'package:doctorhunt/feature/home/presentation/widgets/home_header_sction.dart';
-import 'package:doctorhunt/feature/home/presentation/widgets/live_doctors_list.dart';
-import 'package:doctorhunt/feature/home/presentation/widgets/popular_doctors_list.dart';
-import 'package:doctorhunt/feature/home/presentation/widgets/see_all_row.dart';
+import 'package:doctorhunt/feature/patient/home/presentation/widgets/categories_list.dart';
+import 'package:doctorhunt/feature/patient/home/presentation/widgets/feature_doctor_list.dart';
+import 'package:doctorhunt/feature/patient/home/presentation/widgets/home_header_sction.dart';
+import 'package:doctorhunt/feature/patient/home/presentation/widgets/live_doctors_list.dart';
+import 'package:doctorhunt/feature/patient/home/presentation/widgets/popular_doctors_list.dart';
+import 'package:doctorhunt/feature/patient/home/presentation/widgets/see_all_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class PatientHomeScreen extends StatelessWidget {
+  const PatientHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
