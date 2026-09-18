@@ -1,3 +1,5 @@
+import 'package:doctorhunt/feature/common/auth/presentation/pages/login_screen.dart';
+import 'package:doctorhunt/feature/common/auth/presentation/pages/signup_screen.dart';
 import 'package:doctorhunt/feature/common/bottom_bar/presentation/pages/patient_bottom_bar.dart';
 import 'package:doctorhunt/feature/patient/doctor_details/presentation/pages/doctor_details_screen.dart';
 import 'package:doctorhunt/feature/patient/doctor_details/presentation/pages/select_time_screen.dart';
@@ -23,6 +25,14 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) => const ChooseRoleScreen(),
     ),
     //================= AUTH SHELL =================
+    GoRoute(
+      path: '/login',
+      builder: (context, state) => const LoginScreen(),
+    ),
+    GoRoute(
+      path: '/signup',
+      builder: (context, state) => const SignupScreen(),
+    ),
     // ShellRoute(
     //   builder: (context, state, child) =>
     //       BlocProvider(create: (_) => locator<AuthCubit>(), child: child),

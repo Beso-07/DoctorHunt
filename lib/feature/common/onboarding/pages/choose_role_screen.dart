@@ -81,7 +81,7 @@ class _ChooseRoleScreenState extends State<ChooseRoleScreen> {
               CustomButton(
                 text: 'Continue',
                 onTap: () {
-                  context.go('/patient_bottom_bar');
+                  context.go('/login');
                 },
               ),
 

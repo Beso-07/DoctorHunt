@@ -34,6 +34,7 @@ class DefaultTextField extends StatefulWidget {
     this.isPassword = false,
     this.inputFormatters,
     this.onEditingComplete,
+    this.textAlign = TextAlign.start,
   });
 
   double? height;
@@ -64,6 +65,7 @@ class DefaultTextField extends StatefulWidget {
   bool? isPassword;
   void Function()? onEditingComplete;
   List<TextInputFormatter>? inputFormatters;
+  final TextAlign textAlign;
 
   @override
   State<DefaultTextField> createState() => _DefaultTextFieldState();
@@ -80,10 +82,12 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
       width: widget.width,
       child: TextFormField(
         onTap: widget.onTap,
+        inputFormatters: widget.inputFormatters,
         onChanged: (value) => widget.onChanged?.call(value),
         validator: widget.validator,
         onFieldSubmitted: widget.onSubmitted,
         controller: widget.controller,
+        textAlign: widget.textAlign,
         keyboardType: widget.textInputType,
         onEditingComplete: widget.onEditingComplete,
         obscureText: widget.isPassword!
@@ -113,7 +117,8 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
                       isPasswordVisible
                           ? Icons.visibility_off_outlined
                           : Icons.visibility_outlined,
-                      color: widget.hintColor ?? orderHis,
+                          size: 20,
+                      color: widget.hintColor ?? Color(0xff677294),
                     ),
                   ),
                 )
@@ -128,7 +133,7 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
             minWidth: 44.w,
             minHeight: 44.h,
           ),
-          fillColor: widget.filledColor ?? filledTextFiled,
+          fillColor: widget.filledColor ?? Colors.white,
           contentPadding: EdgeInsets.symmetric(
             horizontal: 12.w,
             vertical: 14.h,
