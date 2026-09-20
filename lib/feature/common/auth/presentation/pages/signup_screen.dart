@@ -7,6 +7,7 @@ import 'package:doctorhunt/core/widgets/default_text_field.dart';
 import 'package:doctorhunt/feature/common/auth/presentation/widgets/auth_header.dart';
 import 'package:doctorhunt/feature/common/auth/presentation/widgets/social_auth_buttons.dart';
 import 'package:doctorhunt/feature/common/auth/presentation/widgets/terms_checkbox.dart';
+import 'package:doctorhunt/router/app_router.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -47,13 +48,13 @@ class _SignupScreenState extends State<SignupScreen> {
     }
 
     AppSnackBar.success(context, 'Accounted created successfully.');
-    context.go('/login');
+    LoginRoute().go(context);
   }
 
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.sizeOf(context).height;
-    final width = MediaQuery.sizeOf(context).width;
+    //final width = MediaQuery.sizeOf(context).width;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(

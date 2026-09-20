@@ -1,3 +1,4 @@
+import 'package:doctorhunt/core/enums/user_role.dart';
 import 'package:doctorhunt/core/theme/app_colors.dart';
 import 'package:doctorhunt/core/theme/custom_text.dart';
 import 'package:doctorhunt/core/validator/app_validator.dart';
@@ -6,13 +7,14 @@ import 'package:doctorhunt/core/widgets/default_text_field.dart';
 import 'package:doctorhunt/feature/common/auth/presentation/widgets/auth_header.dart';
 import 'package:doctorhunt/feature/common/auth/presentation/widgets/forget_password_bottom_sheet.dart';
 import 'package:doctorhunt/feature/common/auth/presentation/widgets/social_auth_buttons.dart';
+import 'package:doctorhunt/router/app_router.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+  final UserRole role;
+  const LoginScreen({super.key,this.role = UserRole.patient});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -35,8 +37,12 @@ class _LoginScreenState extends State<LoginScreen> {
     if (!formKey.currentState!.validate()) {
       return;
     }
+    if (widget.role == UserRole.admin) {
+      // AdminHomeRoute().go(context);
+    } else {
+      PatientHomeRoute().go(context);
+    }
 
-    context.go('/patient_home_screen');
   }
 
   @override
@@ -124,9 +130,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: height * 0.23),
 
                 // ================= SIGN UP ROW =================
-                GestureDetector(
+                if(widget.role == UserRole.patient)...[
+                  GestureDetector(
                   onTap: () {
-                    context.push('/signup');
+                    SignupRoute().push(context);
                   },
                   child: CustomText(
                     text: "Don't have an account? ",
@@ -137,6 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 SizedBox(height: height * 0.05),
+                ]
               ],
             ),
           ),

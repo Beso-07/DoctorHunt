@@ -1,36 +1,38 @@
-import 'package:dio/dio.dart';
 import 'package:doctorhunt/core/api/api_consumer.dart';
 import 'package:doctorhunt/core/api/dio_consumer.dart';
 import 'package:doctorhunt/core/network/network_info.dart';
+import 'package:doctorhunt/feature/common/auth/data/data_source/auth_remote_data_source.dart';
+import 'package:doctorhunt/feature/common/auth/data/data_source/auth_remote_data_source_impl.dart';
+import 'package:doctorhunt/feature/common/auth/data/repositories/auth_repository_impl.dart';
+import 'package:doctorhunt/feature/common/auth/domain/repositories/auth_repository.dart';
+import 'package:doctorhunt/feature/common/auth/domain/use_case/login_usecase.dart';
+import 'package:doctorhunt/feature/common/auth/domain/use_case/logout_usecase.dart';
+import 'package:doctorhunt/feature/common/auth/domain/use_case/signup_usecase.dart';
+import 'package:doctorhunt/feature/common/auth/presentation/blocs/auth_bloc/auth_bloc.dart';
 import 'package:get_it/get_it.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
-
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 final locator = GetIt.instance;
 
 void initServiceLocator() {
-  //================================= External =================================== //
-  locator.registerLazySingleton(() => Dio());
-  locator.registerLazySingleton(() => InternetConnectionChecker.instance);
-  //================================== Core Network ================================ //
+  //===============================  External     ========================================== //
+  locator.registerLazySingleton<SupabaseClient>(() => Supabase.instance.client);
+
+  //===============================  Core Network ========================================== //
   locator.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(locator()));
   locator.registerLazySingleton<ApiConsumer>(() => DioConsumer(dio: locator()));
 
-  //==================================== Firebase =================================== //
-  // locator.registerLazySingleton(() => FirebaseAuth.instance);
-  // locator.registerLazySingleton(() => FirebaseFirestore.instance);
-  // locator.registerLazySingleton(() => GoogleSignIn.instance);
+  //===============================  Data Sources ========================================== //
+   locator.registerLazySingleton<AuthRemoteDataSource>(() => AuthRemoteDataSourceImpl());
+  
+  //===============================  Repository   ========================================== //
+  locator.registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl(locator()));
 
+  // ==============================  UseCases     ========================================== //
+  locator.registerLazySingleton<LoginUsecase>(() => LoginUsecase(locator()),);
+  locator.registerLazySingleton<SignupUsecase>(() => SignupUsecase(locator()),);
+  locator.registerLazySingleton<LogoutUsecase>(() => LogoutUsecase(locator()),);
 
-   //===============================  Data Sources ============================================== //
-
-
-  //============================  Repository  ===========================================//
-
-
-  // ==========================  UseCases  ======================================== //
-
-
-  //======================== Cubits =========================================// 
-
+  //===============================  Blocs        ========================================== //
+  locator.registerFactory<AuthBloc>(() => AuthBloc(locator(),locator(),locator()),);
 }

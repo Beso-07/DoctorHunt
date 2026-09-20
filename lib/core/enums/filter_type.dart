@@ -1,1 +1,0 @@
-enum FilterType { genre, rating, year, sort }
