@@ -3,12 +3,17 @@ import 'package:doctorhunt/core/di/service_locator.dart';
 import 'package:doctorhunt/router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   initServiceLocator();
-  
+
   await CacheHelper.init();
+  await Supabase.initialize(
+    url: 'https://dbiunqqrlbctyanusjlz.supabase.co',
+    anonKey: 'sb_publishable_kAtXMLgoDwhviijwiCTLdg_-gfJ250H',
+  );
   runApp(DoctorHunt());
 }
 

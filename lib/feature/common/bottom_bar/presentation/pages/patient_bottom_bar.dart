@@ -1,7 +1,6 @@
-import 'package:doctorhunt/feature/common/bottom_bar/presentation/widgets/custom_bottom_navigation_bar.dart';
+import 'package:doctorhunt/feature/common/bottom_bar/presentation/widgets/patient_bottom_navigation_bar.dart';
 import 'package:doctorhunt/feature/patient/home/presentation/pages/patient_home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 
 class PatientBottomBar extends StatefulWidget {
@@ -47,7 +46,7 @@ class _PatientBottomBarState extends State<PatientBottomBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _screens[_currentIndex],
-      bottomNavigationBar: CustomBottomNavigationBar(
+      bottomNavigationBar: PatientBottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {

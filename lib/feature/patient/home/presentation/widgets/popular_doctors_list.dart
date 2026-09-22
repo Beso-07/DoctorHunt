@@ -1,5 +1,6 @@
 import 'package:doctorhunt/core/theme/app_colors.dart';
 import 'package:doctorhunt/core/theme/custom_text.dart';
+import 'package:doctorhunt/router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -19,7 +20,7 @@ class PopularDoctorsList extends StatelessWidget {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              context.push('doctor-details');
+              DoctorDetailsRoute().push(context);
             },
             child: Container(
               width: 190.w,

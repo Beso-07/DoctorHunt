@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomBottomNavigationBar extends StatelessWidget {
+class PatientBottomNavigationBar extends StatelessWidget {
   final int currentIndex;
   final ValueChanged<int> onTap;
 
-  const CustomBottomNavigationBar({
+  const PatientBottomNavigationBar({
     super.key,
     required this.currentIndex,
     required this.onTap,

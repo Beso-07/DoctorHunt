@@ -1,11 +1,12 @@
+import 'package:doctorhunt/core/enums/user_role.dart';
 import 'package:doctorhunt/core/theme/app_colors.dart';
 import 'package:doctorhunt/core/theme/custom_text.dart';
 import 'package:doctorhunt/core/widgets/custom_button.dart';
 import 'package:doctorhunt/feature/common/onboarding/widgets/role_card.dart';
+import 'package:doctorhunt/router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
 
 class ChooseRoleScreen extends StatefulWidget {
   const ChooseRoleScreen({super.key});
@@ -15,7 +16,7 @@ class ChooseRoleScreen extends StatefulWidget {
 }
 
 class _ChooseRoleScreenState extends State<ChooseRoleScreen> {
-  String selectedRole = 'Patient';
+  UserRole selectedRole = UserRole.patient;
 
   @override
   Widget build(BuildContext context) {
@@ -52,10 +53,10 @@ class _ChooseRoleScreenState extends State<ChooseRoleScreen> {
                 description:
                     'Find doctors, book appointments,\nand manage your medical records.',
                 imagePath: 'assets/images/patient_icon.png',
-                selected: selectedRole == 'Patient',
+                selected: selectedRole == UserRole.patient,
                 onTap: () {
                   setState(() {
-                    selectedRole = 'Patient';
+                    selectedRole = UserRole.patient;
                   });
                 },
               ),
@@ -68,10 +69,10 @@ class _ChooseRoleScreenState extends State<ChooseRoleScreen> {
                 description:
                     'Manage doctors, appointments,\nusers, and the platform.',
                 imagePath: 'assets/images/admin_icon.png',
-                selected: selectedRole == 'Admin',
+                selected: selectedRole == UserRole.admin,
                 onTap: () {
                   setState(() {
-                    selectedRole = 'Admin';
+                    selectedRole = UserRole.admin;
                   });
                 },
               ),
@@ -81,7 +82,7 @@ class _ChooseRoleScreenState extends State<ChooseRoleScreen> {
               CustomButton(
                 text: 'Continue',
                 onTap: () {
-                  context.go('/login');
+                  LoginRoute(role: selectedRole).go(context);
                 },
               ),
 

@@ -1,3 +1,4 @@
+import 'package:doctorhunt/router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
@@ -20,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
     await Future.delayed(const Duration(seconds: 3));
 
     if (!mounted) return;
-    context.go('/onboarding');
+    OnboardingRoute().go(context);
   }
 
   @override
