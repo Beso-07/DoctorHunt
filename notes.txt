@@ -1,0 +1,3 @@
+flutter_map -->                             package for location map
+database_doctor_hunt                        password
+supabase auth docs -->                      https://medium.com/@punithsuppar7795/flutter-supabase-auth-a-complete-guide-to-secure-login-signup-6c3a3bfe18a3
